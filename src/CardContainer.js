@@ -3,10 +3,10 @@ import Card from './Card'
 
 const CardContainer = ({data}) => {
   const displayCards = data.map((cardData, i) =>
-  <Card 
-    data={cardData}
-    key={i}
-  />
+    <Card 
+      data={cardData}
+      key={i}
+    />
   )
 
   return (
