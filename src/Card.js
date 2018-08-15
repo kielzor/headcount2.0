@@ -6,7 +6,6 @@ const Card = ({data}) => {
     if (key[1] > .5) {
       return  <div className='higher'>
                 <p className='year'>{key[0]}</p>
-                <p className='hide'>----</p>
                 <p className='val'>{key[1]}</p>
               </div>
     } else {

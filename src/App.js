@@ -4,6 +4,7 @@ import CardContainer from './CardContainer';
 import DistrictRepository from './Helper'
 import kinderData from './data/kindergartners_in_full_day_program';
 import Search from './Search'
+import CompareContainer from './CompareContainer';
 
 const district = new DistrictRepository(kinderData)
 
@@ -29,7 +30,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Search updateCards={this.updateCards}/>
+        <header className='header'>
+          <CompareContainer />
+          <Search updateCards={this.updateCards}/>
+        </header>
         <CardContainer data={this.state.data}/>
       </div>
     );
