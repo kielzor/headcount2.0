@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import CardContainer from './CardContainer';
 import DistrictRepository from './Helper'
-import kinderData from './data/kindergartners_in_full_day_program.js';
+import kinderData from './data/kindergartners_in_full_day_program';
+import Search from './Search'
 
 const district = new DistrictRepository(kinderData)
 
@@ -28,6 +29,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Search updateCards={this.updateCards}/>
         <CardContainer data={this.state.data}/>
       </div>
     );
