@@ -1,11 +1,12 @@
 import React from 'react'
 import Card from './Card'
 
-const CardContainer = ({data}) => {
-  const displayCards = data.map((cardData, i) =>
+const CardContainer = ({data, addCompareCards}) => {
+  const displayCards = data.map((cardData) =>
     <Card 
       data={cardData}
-      key={i}
+      addCompareCards={addCompareCards}
+      key={cardData.location}
     />
   )
 

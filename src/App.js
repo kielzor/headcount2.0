@@ -7,6 +7,7 @@ import Search from './Search'
 import CompareContainer from './CompareContainer';
 
 const district = new DistrictRepository(kinderData)
+let counter = 0
 
 class App extends Component {
   constructor() {
@@ -22,9 +23,19 @@ class App extends Component {
 
   updateCards = (string) => {
     let cardList = district.findAllMatches(string)
+
     this.setState({
       data: cardList
     })
+  }
+
+  addCompareCards = (card) => {
+    if (counter === 2) return
+    if (card.className.includes('selected')) return
+  
+      card.classList.add('selected')
+      counter++
+      console.log(counter)
   }
 
   render() {
@@ -34,7 +45,9 @@ class App extends Component {
           <CompareContainer />
           <Search updateCards={this.updateCards}/>
         </header>
-        <CardContainer data={this.state.data}/>
+        <CardContainer 
+          addCompareCards={this.addCompareCards}
+          data={this.state.data}/>
       </div>
     );
   }

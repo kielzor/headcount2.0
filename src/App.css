@@ -59,6 +59,7 @@ body {
 }
 
 .year {
+  text-align: left;
   color: black;
 }
 
@@ -75,7 +76,7 @@ p {
   display: flex;
   justify-content: space-between;
   height: 464px;
-  background-color: #7ee8f7;
+  /* background-color: #7ee8f7; */
   margin-bottom: 1rem;
   border-bottom: 2px solid black;
 }
@@ -109,4 +110,11 @@ p {
   width: 25rem;
   height: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.selected {
+  border-color: black;
+  background-color: #fff;
+  cursor: pointer;
+  opacity: 1;
 }
