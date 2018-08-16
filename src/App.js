@@ -7,13 +7,14 @@ import Search from './Search'
 import CompareContainer from './CompareContainer';
 
 const district = new DistrictRepository(kinderData)
-let counter = 0
 
 class App extends Component {
   constructor() {
     super()
+    this.comp = []
     this.state = {
-      data: []
+      data: [],
+      compared: [],
     }
   }
 
@@ -22,27 +23,57 @@ class App extends Component {
   }
 
   updateCards = (string) => {
-    let cardList = district.findAllMatches(string)
+    let data = district.findAllMatches(string)
 
     this.setState({
-      data: cardList
+      data
     })
   }
 
   addCompareCards = (card) => {
-    if (counter === 2) return
+    let data = district.findAllMatches(card.children[0].innerText)
+    if(this.comp.length < 2) {
+      if(this.comp.length === 1 && data[0].location === this.comp[0]['location']){
+        return
+      }
+      this.comp.push(data[0])
+      this.setState({
+        compared: this.comp
+      })
+    }
+    else {
+      if(data[0].location === this.comp[0]['location']) {
+        this.comp.shift()
+      }
+      else if (data[0].location === this.comp[1]['location']) {
+        this.comp.pop()
+      }
+      this.setState({
+        compared: this.comp
+      })
+    }
+  }
+
+  evaluateCard = (card) => {
+    // if (this.state.compared.length >= 2) {
+    //   return
+    // }
+    console.log('compare', this.state.compared)
+    console.log('data', this.state.data)
     if (card.className.includes('selected')) return
-  
-      card.classList.add('selected')
-      counter++
-      console.log(counter)
+    card.classList.add('selected')
+  }
+
+  check() {
+    return this.state.compared
   }
 
   render() {
+    console.log('compare render', this.state.compared)
     return (
       <div>
         <header className='header'>
-          <CompareContainer />
+          <CompareContainer data={this.state.compared} check={this.check()}/>
           <Search updateCards={this.updateCards}/>
         </header>
         <CardContainer 
