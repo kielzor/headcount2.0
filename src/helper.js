@@ -36,4 +36,27 @@ export default class DistrictRepository {
 
     return matches
   }
+
+  findAverage = (district) => {
+    let stats = Object.values(this.stats[district].stats)
+    let average = stats.reduce((sum, num) => {
+      sum = sum + num / stats.length
+      return sum
+    }, 0)
+    return Math.round(1000 * average) / 1000
+  }
+
+  compareDistrictAverages = (districtOne, districtTwo) => {
+    let firstDistrict = districtOne.toUpperCase()
+    let secondDistrict = districtTwo.toUpperCase()
+    let first = this.findAverage(firstDistrict)
+    let second = this.findAverage(secondDistrict)
+    let compared = first / second
+
+    return {
+            [firstDistrict]: first,
+            [secondDistrict]: second,
+            compared: Math.round(1000 * compared) / 1000
+    }
+  }
 }
