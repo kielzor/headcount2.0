@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 
-const Card = ({data}) => {
+const Card = ({data, addCompareCards}) => {
   const stats = Object.entries(data.stats).map(key => {
     if (key[1] > .5) {
       return  <div className='higher'>
@@ -18,10 +18,10 @@ const Card = ({data}) => {
   })
 
   return (
-    <div className='card'>
+    <span className='card' onClick={(e) => addCompareCards(e.target.closest('span'))}>
       <h5 className='location'>{data.location}</h5>
       <div className='stats'>{stats}</div>
-    </div>
+    </span>
   )
 }
 
