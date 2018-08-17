@@ -1,12 +1,11 @@
 import React from 'react'
 import Card from './Card'
 
-const CompareContainer = ({data, check}) => {
-  console.log('data', data)
-  console.log('check', check)
+const CompareContainer = ({data, evaluateCompareCard}) => {
   const displayCards = data.map((cardData) =>
   <Card 
     data={cardData}
+    evaluateCompareCard={evaluateCompareCard}
   />
 )
 
