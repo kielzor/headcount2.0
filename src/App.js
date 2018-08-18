@@ -55,7 +55,8 @@ class App extends Component {
       <div>
         <header className='header'>
           <CompareContainer 
-            data={this.state.compared} 
+            district={district}
+            compared={this.state.compared} 
             evaluateCompareCard={this.evaluateCompareCard}/>
           <Search updateCards={this.updateCards}
         />
