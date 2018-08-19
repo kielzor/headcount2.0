@@ -47,7 +47,6 @@ export default class DistrictRepository {
   }
 
   compareDistrictAverages = (districtOne, districtTwo) => {
-    console.log('yay')
     let firstDistrict = districtOne.toUpperCase()
     let secondDistrict = districtTwo.toUpperCase()
     let first = this.findAverage(firstDistrict)

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 
 const Card = ({data, evaluateCompareCard, comparedInClass, compArrFull}) => {
@@ -34,6 +35,13 @@ const Card = ({data, evaluateCompareCard, comparedInClass, compArrFull}) => {
       <div className='stats'>{stats}</div>
     </span>
   )
+}
+
+Card.propTypes = {
+  data: PropTypes.object,
+  evaluateComparedCard: PropTypes.func,
+  comparedInClass: PropTypes.bool,
+  compArrFull: PropTypes.bool
 }
 
 export default Card
