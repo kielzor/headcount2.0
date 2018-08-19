@@ -8,7 +8,7 @@ class Search extends Component {
         <input 
           className='search-input' 
           type='text' 
-          placeholder='Search for district' 
+          placeholder='Filter districts' 
           onChange={(e) => this.props.updateCards(e.target.value)}
         />
       </div>

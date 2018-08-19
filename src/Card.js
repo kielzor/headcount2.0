@@ -20,12 +20,10 @@ const Card = ({data, evaluateCompareCard, comparedInClass, compArrFull}) => {
   const evaluateClass = () => {
     let futureClass = 'card'
 
-    if(!compArrFull) {
-      futureClass = 'card card-hover'
-    }
-    if(comparedInClass) {
-      futureClass = futureClass + ' selected'
-    }
+    if(!compArrFull) futureClass += ' card-hover'
+    if(comparedInClass) futureClass += ' selected card-hover'
+    if (compArrFull && !comparedInClass) futureClass += ' no-click'
+
     return futureClass
   }
 
