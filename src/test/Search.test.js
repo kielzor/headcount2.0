@@ -1,6 +1,6 @@
 import React from 'react'
 import Search from '../Search.js'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 
 describe('Search', () => {
   let updateCardsMock;

@@ -29,7 +29,7 @@ const Card = ({data, evaluateCompareCard, comparedInClass, compArrFull}) => {
   }
 
   return (
-    <span className={evaluateClass()} 
+    <span className={evaluateClass()}
           onClick={(e) => evaluateCompareCard(e.target.closest('span'))}>
       <h5 className='location'>{data.location}</h5>
       <div className='stats'>{stats}</div>
