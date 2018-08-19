@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './Card'
+import PropTypes from 'prop-types'
 
 const CardContainer = ({data, addCompareCards, evaluateCompareCard, comparedArr}) => {
   const updateClass = (cardData) => {
@@ -26,6 +27,13 @@ const CardContainer = ({data, addCompareCards, evaluateCompareCard, comparedArr}
       {displayCards}
     </div>
   )
+}
+
+CardContainer.propTypes = {
+  data: PropTypes.array,
+  addCompareCards: PropTypes.func,
+  evaluateCompareCard: PropTypes.func,
+  comparedArr: PropTypes.array
 }
 
 export default CardContainer

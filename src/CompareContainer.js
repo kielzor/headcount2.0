@@ -1,11 +1,13 @@
 import React from 'react'
 import Card from './Card'
+import PropTypes from 'prop-types'
 
 const CompareContainer = ({compared, evaluateCompareCard, district}) => {
-  const displayCards = compared.map((cardData) =>
+  const displayCards = compared.map((cardData, i) =>
   <Card 
     data={cardData}
     evaluateCompareCard={evaluateCompareCard}
+    key={`${cardData} + ${i}`}
   />
 )
 
@@ -29,6 +31,12 @@ const CompareContainer = ({compared, evaluateCompareCard, district}) => {
       <div className='empty-compare'>{displayCards[1]}</div>
     </div>
   )
+}
+
+CompareContainer.propTypes = {
+  compared: PropTypes.array,
+  evaluateCompareCard: PropTypes.func,
+  district: PropTypes.object
 }
 
 export default CompareContainer

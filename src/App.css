@@ -13,9 +13,10 @@ body {
 }
 
 .empty-compare {
-  height: 466px;
+  height: 462px;
   width: 28%;
   border: 5px solid black;
+  border-bottom: none;
   display: flex;
   justify-content: center;
   align-items: center
@@ -88,7 +89,7 @@ p {
 .header {
   display: flex;
   justify-content: space-between;
-  height: 474px;
+  height: 464px;
   background-color: #4b7be7;
   margin-bottom: 1rem;
   border-bottom: 5px solid black;
@@ -134,6 +135,7 @@ p {
 }
 
 .compare-header {
+  /* color: #f4f4f4; */
   margin-top: 5rem;
 }
 
