@@ -46,10 +46,6 @@ class App extends Component {
     })
   }
 
-  // compareDistricts = (arr) => {
-  //   console.log(arr)
-  // }
-
   render() {
     return (
       <div>
