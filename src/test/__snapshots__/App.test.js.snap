@@ -22,6 +22,7 @@ ShallowWrapper {
 >
           <CompareContainer
                     compared={Array []}
+                    createAverage={[Function]}
                     district={
                               DistrictRepository {
                                         "compareDistrictAverages": [Function],
@@ -5839,6 +5840,7 @@ ShallowWrapper {
                             ]
           }
           evaluateCompareCard={[Function]}
+          updateClass={[Function]}
 />,
       ],
     },
@@ -5852,6 +5854,7 @@ ShallowWrapper {
           "children": Array [
             <CompareContainer
               compared={Array []}
+              createAverage={[Function]}
               district={
                             DistrictRepository {
                                           "compareDistrictAverages": [Function],
@@ -8775,6 +8778,7 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "compared": Array [],
+              "createAverage": [Function],
               "district": DistrictRepository {
                 "compareDistrictAverages": [Function],
                 "findAllMatches": [Function],
@@ -14606,6 +14610,7 @@ ShallowWrapper {
             },
           ],
           "evaluateCompareCard": [Function],
+          "updateClass": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -14626,6 +14631,7 @@ ShallowWrapper {
 >
             <CompareContainer
                         compared={Array []}
+                        createAverage={[Function]}
                         district={
                                     DistrictRepository {
                                                 "compareDistrictAverages": [Function],
@@ -20443,6 +20449,7 @@ ShallowWrapper {
                                   ]
             }
             evaluateCompareCard={[Function]}
+            updateClass={[Function]}
 />,
         ],
       },
@@ -20456,6 +20463,7 @@ ShallowWrapper {
             "children": Array [
               <CompareContainer
                 compared={Array []}
+                createAverage={[Function]}
                 district={
                                 DistrictRepository {
                                                 "compareDistrictAverages": [Function],
@@ -23379,6 +23387,7 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "compared": Array [],
+                "createAverage": [Function],
                 "district": DistrictRepository {
                   "compareDistrictAverages": [Function],
                   "findAllMatches": [Function],
@@ -29210,6 +29219,7 @@ ShallowWrapper {
               },
             ],
             "evaluateCompareCard": [Function],
+            "updateClass": [Function],
           },
           "ref": null,
           "rendered": null,

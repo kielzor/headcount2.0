@@ -2,15 +2,7 @@ import React from 'react'
 import Card from './Card'
 import PropTypes from 'prop-types'
 
-const CardContainer = ({data, addCompareCards, evaluateCompareCard, comparedArr}) => {
-  const updateClass = (cardData) => {
-    if ((comparedArr[0] && cardData.location === comparedArr[0]['location']) ||
-        (comparedArr[1] && cardData.location === comparedArr[1]['location'])) {
-      return true
-    }
-    return false
-  }
-
+const CardContainer = ({data, addCompareCards, evaluateCompareCard, comparedArr, updateClass}) => {
   const displayCards = data.map((cardData, i) =>
     <Card 
       evaluateCompareCard={evaluateCompareCard}

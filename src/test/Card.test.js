@@ -19,24 +19,56 @@ describe('card', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  // it('adds the correct class when evaluateClass is invoked', () => {
-  //   wrapper = shallow(<Card 
-  //     evaluateCompareCard={evaluateCompareMock} 
-  //     data={mockData}
-  //     comparedInClass={true}/>)
+  it('card does exist', () => {
+    expect(wrapper.find('.card').length).toEqual(1)
+  })
 
-  //     wrapper.instance().evaluateClass()
+  it('adds the card-hover class when compArrFull is false', () => {
+    wrapper = mount(<Card 
+      compArrFull={false}
+      evaluateCompareCard={evaluateCompareMock} 
+      data={mockData}
+      comparedInClass={false}/>)
 
-  //     expect(wrapper.futureClass).toEqual('card')
-  // })
+      expect(wrapper.find('.card').hasClass('card-hover')).toEqual(true)
+  })
 
-  // it('invokes evaluateCompareCard', () => {
-  //   wrapper = mount(<Card 
-  //     evaluateCompareCard={evaluateCompareMock} 
-  //     data={mockData}/>)
+  it('does not have the card-hover class when compArrFull is true and comparedInClass is false', () => {
+    wrapper = mount(<Card 
+      compArrFull={true}
+      evaluateCompareCard={evaluateCompareMock} 
+      data={mockData}
+      comparedInClass={false}/>)
 
-  //   wrapper.find('span').simulate('click')
+      expect(wrapper.find('.card').hasClass('card-hover')).toEqual(false)
+  })
+  
+  it('does have the card-hover and selected class when comparedInClass is true', () => {
+    wrapper = mount(<Card 
+      compArrFull={true}
+      evaluateCompareCard={evaluateCompareMock} 
+      data={mockData}
+      comparedInClass={true}/>)
 
-  //   expect(evaluateCompareMock).toHaveBeenCalled()
-  // })
+      expect(wrapper.find('.card').hasClass('card-hover')).toEqual(true)
+      expect(wrapper.find('.card').hasClass('selected')).toEqual(true)
+  })
+  
+  it('does have the no-click class when comparedInClass is false and compArrFull is true', () => {
+    wrapper = mount(<Card 
+      compArrFull={true}
+      evaluateCompareCard={evaluateCompareMock} 
+      data={mockData}
+      comparedInClass={false}/>)
+
+      expect(wrapper.find('.card').hasClass('no-click')).toEqual(true)
+  })
+
+  it('invokes evaluateCompareCard when card is clicked', () => {
+    expect(evaluateCompareMock).not.toHaveBeenCalled()
+
+    wrapper.find('.card').simulate('click')
+
+    expect(evaluateCompareMock).toHaveBeenCalled()
+  })
 })

@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './Card'
 import PropTypes from 'prop-types'
 
-const CompareContainer = ({compared, evaluateCompareCard, district}) => {
+const CompareContainer = ({createAverage, compared, evaluateCompareCard, district}) => {
   const displayCards = compared.map((cardData, i) =>
   <Card 
     data={cardData}
@@ -10,11 +10,6 @@ const CompareContainer = ({compared, evaluateCompareCard, district}) => {
     key={`${cardData} + ${i}`}
   />
 )
-
-  const createAverage = () => {
-    let average = district.compareDistrictAverages(compared[0].location, compared[1].location)
-    return Object.values(average)
-  }
 
   return (
     <div className='compare-box'>
