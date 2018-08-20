@@ -3,6 +3,22 @@ import { shallow, mount } from 'enzyme'
 import App from '../App.js'
 import ReactDOM from 'react-dom'
 
+const expectedColorado = [{ "location": "COLORADO", 
+        "stats": 
+              {
+                "2004": 0.24,
+                "2005": 0.278,
+                "2006": 0.337,
+                "2007": 0.395, 
+                "2008": 0.536, 
+                "2009": 0.598, 
+                "2010": 0.64, 
+                "2011": 0.672, 
+                "2012": 0.695, 
+                "2013": 0.703, 
+                "2014": 0.741
+              }}]
+
 describe('App', () => {
   let wrapper
 
@@ -32,7 +48,7 @@ describe('App', () => {
     expect(wrapper.state('data').length).toEqual(181)
   })
 
-  it('updateCards should render cards with their information', () => {
+  it('updateCards should render specific cards with the correct information', () => {
     const mockCard = 'COLORADO'
     const expected = [{ "location": "COLORADO", 
                         "stats": 
@@ -47,7 +63,8 @@ describe('App', () => {
                                   "2011": 0.672, 
                                   "2012": 0.695, 
                                   "2013": 0.703, 
-                                  "2014": 0.741}}, 
+                                  "2014": 0.741
+                                }}, 
                         {"location": "COLORADO SPRINGS 11", 
                           "stats": 
                                 {
@@ -61,11 +78,44 @@ describe('App', () => {
                                   "2011": 0.994, 
                                   "2012": 0.993, 
                                   "2013": 0.989, 
-                                  "2014": 0.994}}]
+                                  "2014": 0.994
+                                }}]
 
     wrapper.instance().updateCards(mockCard)
 
     expect(wrapper.state('data')).toEqual(expected)
     expect(wrapper.state('data').length).toEqual(2)
+  })
+
+  it('evaluateCompareCard should add the correct card to the compared container', () => {
+    wrapper.instance().evaluateCompareCard('COLORADO')
+
+    expect(wrapper.state('compared').length).toEqual(1)
+    expect(wrapper.state('compared')).toEqual(expectedColorado)
+  })
+
+  it('evaluateCompareCard should remove the correct card from the compared container', () => {
+
+    wrapper.instance().evaluateCompareCard('COLORADO')
+    wrapper.instance().evaluateCompareCard('ACADEMY 20')
+    wrapper.instance().evaluateCompareCard('ACADEMY 20')
+
+    expect(wrapper.state('compared')).toEqual(expectedColorado)
+    expect(wrapper.state('compared').length).toEqual(1)
+  })
+
+  it('create average should return the correct averages', () => {
+    wrapper.instance().evaluateCompareCard('COLORADO')
+    wrapper.instance().evaluateCompareCard('ACADEMY 20')
+
+    expect(wrapper.instance().createAverage()).toEqual([0.53, 0.407, 1.302])   
+  })
+
+  it('updateClass should return false initially, and true when it exists inside compare container', () => {
+    expect(wrapper.instance().updateClass()).toEqual(false)
+
+    wrapper.instance().evaluateCompareCard('COLORADO')
+     
+    expect(wrapper.instance().updateClass(expectedColorado[0])).toEqual(true)
   })
 })

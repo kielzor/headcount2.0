@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import CardContainer from './CardContainer';
-import DistrictRepository from './Helper'
 import kinderData from './data/kindergartners_in_full_day_program';
 import Search from './Search'
 import CompareContainer from './CompareContainer';
+import DistrictRepository from './Helper'
 
 const district = new DistrictRepository(kinderData)
 
@@ -30,8 +30,8 @@ class App extends Component {
     })
   }
 
-  evaluateCompareCard = (card) => {
-    let data = district.findAllMatches(card.children[0].innerText) 
+  evaluateCompareCard = (string) => {
+    let data = district.findAllMatches(string) 
     
     if (this.comp[0] && data[0].location === this.comp[0]['location']) {
       this.comp.shift()
@@ -46,6 +46,19 @@ class App extends Component {
     })
   }
 
+  createAverage = () => {
+    let average = district.compareDistrictAverages(this.state.compared[0].location, this.state.compared[1].location)
+    return Object.values(average)
+  }
+
+  updateClass = (cardData) => {
+    if ((this.state.compared[0] && cardData.location === this.state.compared[0]['location']) ||
+        (this.state.compared[1] && cardData.location === this.state.compared[1]['location'])) {
+      return true
+    }
+    return false
+  }
+
   render() {
     return (
       <div>
@@ -53,11 +66,13 @@ class App extends Component {
           <CompareContainer 
             district={district}
             compared={this.state.compared} 
-            evaluateCompareCard={this.evaluateCompareCard}/>
+            evaluateCompareCard={this.evaluateCompareCard}
+            createAverage={this.createAverage}/>
           <Search updateCards={this.updateCards}
         />
         </header>
         <CardContainer
+          updateClass={this.updateClass}
           evaluateCompareCard={this.evaluateCompareCard}
           comparedArr={this.state.compared}
           addCompareCards={this.addCompareCards}

@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CompareContainer matches the snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CompareContainer
+    compared={Array []}
+    comparedArr={undefined}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="empty-compare"
+/>,
+        <div
+          className="compare-text"
+>
+          <h4
+                    className="compare-header"
+          >
+                    Compare Locations
+          </h4>
+          <div
+                    className="single-avgs"
+          >
+                    
+          </div>
+</div>,
+        <div
+          className="empty-compare"
+/>,
+      ],
+      "className": "compare-box",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "className": "empty-compare",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h4
+              className="compare-header"
+>
+              Compare Locations
+</h4>,
+            false,
+            false,
+            <div
+              className="single-avgs"
+>
+              
+</div>,
+          ],
+          "className": "compare-text",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Compare Locations",
+              "className": "compare-header",
+            },
+            "ref": null,
+            "rendered": "Compare Locations",
+            "type": "h4",
+          },
+          false,
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                false,
+                false,
+              ],
+              "className": "single-avgs",
+            },
+            "ref": null,
+            "rendered": Array [
+              false,
+              false,
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "className": "empty-compare",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="empty-compare"
+/>,
+          <div
+            className="compare-text"
+>
+            <h4
+                        className="compare-header"
+            >
+                        Compare Locations
+            </h4>
+            <div
+                        className="single-avgs"
+            >
+                        
+            </div>
+</div>,
+          <div
+            className="empty-compare"
+/>,
+        ],
+        "className": "compare-box",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "empty-compare",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h4
+                className="compare-header"
+>
+                Compare Locations
+</h4>,
+              false,
+              false,
+              <div
+                className="single-avgs"
+>
+                
+</div>,
+            ],
+            "className": "compare-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Compare Locations",
+                "className": "compare-header",
+              },
+              "ref": null,
+              "rendered": "Compare Locations",
+              "type": "h4",
+            },
+            false,
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  false,
+                  false,
+                ],
+                "className": "single-avgs",
+              },
+              "ref": null,
+              "rendered": Array [
+                false,
+                false,
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "empty-compare",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "prevContext": true,
+          },
+        },
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

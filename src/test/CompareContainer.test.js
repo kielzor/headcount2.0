@@ -1,16 +1,17 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import CardContainer from '../CardContainer'
+import CompareContainer from '../CompareContainer'
 
-describe('CardContainer', () => {
+describe('CompareContainer', () => {
   let wrapper
   let mockData
   let mockCompare
 
   beforeEach(() => {
     mockData = []
-    wrapper = shallow(<CardContainer 
-                      data={mockData}
+    const mockUpdate = jest.fn()
+    wrapper = shallow(<CompareContainer 
+                      compared={mockData}
                       comparedArr={mockCompare}/>)
   })
 
@@ -19,6 +20,7 @@ describe('CardContainer', () => {
   })
 
   it('should return information to the card', () => {
-    expect(wrapper.find('div').length).toEqual(1)
+    expect(wrapper.find('div').length).toEqual(5)
+    expect(wrapper.find('h4').length).toEqual(1)
   })
 })
