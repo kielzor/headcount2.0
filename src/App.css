@@ -1,10 +1,5 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
 
-
-body {
-  background-color: #cbecde;
-}
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -13,13 +8,12 @@ body {
 }
 
 .empty-compare {
-  height: 462px;
+  height: 458px;
   width: 28%;
-  border: 5px solid black;
-  border-bottom: none;
   display: flex;
   justify-content: center;
-  align-items: center
+  padding-top: 8px;
+  align-items: center;
 }
 
 .no-click {
@@ -27,8 +21,7 @@ body {
 }
 
 .card {
-  box-shadow: 3px 3px 3px grey;
-  background-color: #ebe9e6;
+  background-color: #fff;
   width: 200px;
   display: flex;
   flex-wrap: wrap;
@@ -40,7 +33,6 @@ body {
 }
 
 .card-hover:hover {
-  border-color: black;
   background-color: #fff;
   cursor: pointer;
   opacity: 1;
@@ -90,9 +82,8 @@ p {
   display: flex;
   justify-content: space-between;
   height: 464px;
-  background-color: #4b7be7;
+  background-color: #6081ce;
   margin-bottom: 1rem;
-  border-bottom: 5px solid black;
 }
 
 .compare-box {
@@ -124,8 +115,7 @@ p {
 }
 
 .selected {
-  border-color: black;
-  background-color: #fffde1;
+  background-color: #ddd;
   cursor: pointer;
   opacity: 1;
 }
@@ -135,7 +125,6 @@ p {
 }
 
 .compare-header {
-  /* color: #f4f4f4; */
   margin-top: 5rem;
 }
 

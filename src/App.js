@@ -2,61 +2,65 @@ import React, { Component } from 'react';
 import './App.css';
 import CardContainer from './CardContainer';
 import kinderData from './data/kindergartners_in_full_day_program';
-import Search from './Search'
+import Search from './Search';
 import CompareContainer from './CompareContainer';
-import DistrictRepository from './Helper'
+import DistrictRepository from './Helper';
 
-const district = new DistrictRepository(kinderData)
+const district = new DistrictRepository(kinderData);
 
 class App extends Component {
   constructor() {
-    super()
-    this.comp = []
+    super();
+    this.comp = [];
     this.state = {
       data: [],
-      compared: [],
-    }
+      compared: []
+    };
   }
 
   componentDidMount = () => {
-    this.updateCards()
+    this.updateCards();
   }
 
   updateCards = (string) => {
-    let data = district.findAllMatches(string)
+    let data = district.findAllMatches(string);
     
     this.setState({
       data
-    })
+    });
   }
 
   evaluateCompareCard = (string) => {
-    let data = district.findAllMatches(string) 
+    let data = district.findAllMatches(string); 
     
     if (this.comp[0] && data[0].location === this.comp[0]['location']) {
-      this.comp.shift()
+      this.comp.shift();
     } else if (this.comp[1] && data[0].location === this.comp[1]['location']) {
-      this.comp.pop()
-    } else{
-      this.comp.push(data[0])
+      this.comp.pop();
+    } else {
+      this.comp.push(data[0]);
     }
 
     this.setState({
       compared: this.comp
-    })
+    });
   }
 
   createAverage = () => {
-    let average = district.compareDistrictAverages(this.state.compared[0].location, this.state.compared[1].location)
-    return Object.values(average)
+    let average = district.compareDistrictAverages(this.state.compared[0].location, this.state.compared[1].location);
+
+    return Object.values(average);
   }
 
   updateClass = (cardData) => {
-    if ((this.state.compared[0] && cardData.location === this.state.compared[0]['location']) ||
-        (this.state.compared[1] && cardData.location === this.state.compared[1]['location'])) {
-      return true
+    let compared = this.state.compared;
+
+    if ((compared[0] && cardData.location === compared[0]['location']) ||
+        (compared[1] && cardData.location === compared[1]['location'])) {
+      return true;
     }
-    return false
+
+    return false;
   }
 
   render() {
@@ -64,14 +68,16 @@ class App extends Component {
       <div>
         <header className='header'>
           <CompareContainer 
+            key={'compare'}
             district={district}
             compared={this.state.compared} 
             evaluateCompareCard={this.evaluateCompareCard}
             createAverage={this.createAverage}/>
           <Search updateCards={this.updateCards}
-        />
+          />
         </header>
         <CardContainer
+          key={'card-container'}
           updateClass={this.updateClass}
           evaluateCompareCard={this.evaluateCompareCard}
           comparedArr={this.state.compared}

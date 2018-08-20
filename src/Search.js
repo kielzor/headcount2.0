@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
   render () {
@@ -10,15 +10,15 @@ class Search extends Component {
           className='search-input' 
           type='text' 
           placeholder='Filter districts' 
-          onChange={(e) => this.props.updateCards(e.target.value)}
+          onChange={(event) => this.props.updateCards(event.target.value)}
         />
       </div>
-    )
+    );
   }
 }
 
 Search.propTypes = {
   updateCards: PropTypes.func
-}
+};
 
-export default Search
+export default Search;
