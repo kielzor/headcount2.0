@@ -1,10 +1,5 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
 
-
-body {
-  background-color: #cbecde;
-}
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
